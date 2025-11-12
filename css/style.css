@@ -1,0 +1,197 @@
+/* font-family: "Geist", sans-serif;
+font-family: "EB Garamond", serif; */
+:root {
+    --primary : #00774C;
+    --secondary : #FFEBC2;
+    --yellow: #FFC219;
+    --secondaryLight : #F8F5EC;
+    --secondaryLightAlt: #EBE9E0;
+    
+    --body: #383838;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+ul , ol {
+    list-style: none;
+}
+
+/* Fonts */
+.geist {
+    font-family: "Geist", sans-serif;
+}
+.garamond {
+    font-family: "EB Garamond", serif;
+}
+
+/* Margins  */
+.mb-1 {
+    margin-bottom: 1rem;
+}
+.mb-2 {
+    margin-bottom: 2rem;
+}
+/* Backgrounds */
+.bg-primary {
+    background: var(--primary);
+}
+.bg-secondary {
+    background: var(--secondary);
+}
+.bg-secondaryLightAlt {
+    background: var(--secondaryLightAlt);
+}
+
+/* Border Radius */
+.br-16 {
+    border-radius: 16px;
+}
+/* Colors */
+.text-primary {
+    color: var(--primary);
+}
+.text-secondary {
+    color: var(--secondary);
+}
+.text-secondaryLight {
+    color: var(--secondaryLight);
+}
+
+/* Section  */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Container */
+.container-w90 {
+    max-width: 90%;
+    margin: 0 auto;
+}
+/* Container For Slider */
+.container-w95-overflow {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Heading Block */
+.headingBlock {
+    margin-bottom: 80px;
+}
+.section-heading {
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 120%;
+}
+
+/* Paragraph Tags */
+p {
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 400;
+}
+/* Image */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Widths */
+.w-100 {
+    width: 100%;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--yellow);
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: "Geist", sans-serif;
+}
+
+/* Perfect Match Container Start */
+.Wrapper.perfectMatch {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+}
+.Wrapper.perfectMatch .leftWrapper .wrap {
+    width: 50%;   
+}
+.Wrapper.perfectMatch .rightWrapper .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.Wrapper.perfectMatch .rightWrapper .cards .card {
+    padding: 54px 20px;
+    position: relative;
+    min-height: 500px;
+}
+.Wrapper.perfectMatch .rightWrapper .cards .card .contentBlock {
+    width: 50%;
+}
+.Wrapper.perfectMatch .rightWrapper .cards .card .cardHeading {
+    font-family: "Geist", sans-serif;
+    font-size: 32px;
+    line-height: 100%;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--body);
+}
+.Wrapper.perfectMatch .rightWrapper .cards .card .cardDescp {
+    font-family: "Geist", sans-serif;
+    color: var(--body);   
+    font-size: 14px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+.Wrapper.perfectMatch .rightWrapper .cards .card .cardLayer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1  ;
+}
+/* Perfecth Match Container End */
+
+/* Media Screens */
+@media screen  and (max-width: 480px){
+    /* Container */
+    .container-w95-overflow {
+        max-width: 95%;
+        margin-right: 0;
+    }
+    /* Heading Block */
+    .headingBlock {
+        margin-bottom: 45px;
+    }
+    .section-heading {
+        font-size: 30px;
+    }
+     /* Perfect Match Container Start  */
+     .Wrapper.perfectMatch {
+        grid-template-columns: 1fr;
+     }
+     .Wrapper.perfectMatch .leftWrapper .wrap {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 46px;
+     }
+     .Wrapper.perfectMatch .leftWrapper .wrap p{
+        max-width: 300px;  
+        margin: 0 auto;
+     }
+     /* Perfect Match Container End  */
+}
