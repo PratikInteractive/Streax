@@ -30,5 +30,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+    const swiper2 = new Swiper('.instaSlider', {
+        loop: false,
+        slidesPerView: 5,
+        spaceBetween: 32,
+        breakpoints: {
+            0: {
+                slidesPerView: 1.4,
+                spaceBetween: 16,
+            },
+            576: {
+                slidesPerView: 3.4,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 5,
+                spaceBetween: 42,
+            }
+        }
+    });
+
+    
+    const swiper3 = new Swiper('.availableSlider', {
+        loop: false,
+        slidesPerView: 6,
+        spaceBetween: 20,
+        breakpoints: {
+            0: {
+                slidesPerView: 1.7,
+                spaceBetween: 16,
+                initialSlide: 2,
+                centeredSlides: true,  
+            },
+            576: {
+                slidesPerView: 3.4,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 6,
+                spaceBetween: 42,
+            }
+        }
+    });
+
+
 });
 

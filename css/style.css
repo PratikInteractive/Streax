@@ -2,6 +2,7 @@
 font-family: "EB Garamond", serif; */
 :root {
     --primary : #00774C;
+    --primaryDark : #1B3F23;
     --secondary : #FFEBC2;
     --yellow: #FFC219;
     --secondaryLight : #F8F5EC;
@@ -46,6 +47,9 @@ ul , ol {
 .bg-secondary {
     background: var(--secondary);
 }
+.bg-secondaryLight {
+    background: var(--secondaryLight);
+}
 .bg-secondaryLightAlt {
     background: var(--secondaryLightAlt);
 }
@@ -55,6 +59,12 @@ ul , ol {
     border-radius: 16px;
 }
 /* Colors */
+.text-dark {
+    color: #000;
+}
+.text-body {
+    color: var(--body);
+}
 .text-primary {
     color: var(--primary);
 }
@@ -71,6 +81,10 @@ ul , ol {
 }
 
 /* Container */
+.container-w80 {
+    max-width: 80%;
+    margin: 0 auto;
+}
 .container-w90 {
     max-width: 90%;
     margin: 0 auto;
@@ -108,7 +122,14 @@ p {
     width: 100%;
 }
 
-/* Buttons */
+/* Display Flex */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons & Links*/
 .btn {
     display: inline-block;
     background-color: var(--yellow);
@@ -119,6 +140,15 @@ p {
     border-radius: 4px;
     text-decoration: none;
     font-family: "Geist", sans-serif;
+}
+.readMore {
+    font-family: "Geist", sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--body);
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--body);
 }
 
 /* Perfect Match Container Start */
@@ -166,6 +196,93 @@ p {
 }
 /* Perfecth Match Container End */
 
+/* Who We Are Section Start */
+.Wrapper.DetailedAbout {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+.Wrapper.DetailedAbout .leftWrapper .wrap{
+    width: 60%;
+}
+.Wrapper.DetailedAbout .rightWrapper .gridSix {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 40px;
+}
+.Wrapper.DetailedAbout .rightWrapper .gridSix .block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+}
+/* Who We Are Section End */
+
+/* Insta Section Start */
+.instaSlider .block > img {
+    border-radius: 10px;
+}
+.insta-section .followSection {
+    margin-top: 40px
+}
+.insta-section .followSection p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--primaryDark);
+    padding-bottom: 5px;
+
+}
+
+/* Insta Section End */
+
+/* Available Section Start */
+.available-section .availableSlider .block .logo-img {
+    max-width: 200px;
+    height: auto;
+}
+.availableSlider .swiper-slide {
+    width: 80%; /* or 85%, adjust for desired visibility */
+    transition: transform 0.3s ease;
+  }
+/* Available Section End */
+
+/* Blogs Section Start */
+.container-Blogs {
+    max-width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 50px;
+}
+
+.container-Blogs .leftWrapper .imgWrapper  {
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+.container-Blogs .leftWrapper .imgWrapper img {
+    border-radius: 16px;
+}
+.blogTextWrapper.blogTextFlex {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+.blogTextWrapper.blogTextFlex .blogText {
+    width: 60%;
+}
+.blogTextWrapper.blogTextFlex .blogLink {
+    text-align: right;
+    width: 30%;
+}
+.blogTextWrapper .blogText .blogHeading{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+/* Blogs Section End */
 /* Media Screens */
 @media screen  and (max-width: 480px){
     /* Container */
@@ -193,5 +310,31 @@ p {
         max-width: 300px;  
         margin: 0 auto;
      }
-     /* Perfect Match Container End  */
+    /* Perfect Match Container End  */
+    /* Who We Are Section Start */
+    .DetailedAbout {
+        max-width: 95%;
+    }
+    .Wrapper.DetailedAbout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .Wrapper.DetailedAbout .leftWrapper {
+        text-align: center;
+        display: flex;
+        justify-content: center; 
+    }
+    .Wrapper.DetailedAbout .rightWrapper .gridSix .block img {
+        width: 70px;
+        height: 70px;
+    }
+    .Wrapper.DetailedAbout .rightWrapper .gridSix .block .rtbDescp {
+        font-size: 12px;
+    }
+    /* Who We Are Section End */
+    /* Available Section Start */   
+    .container-w95-overflow.available-section {
+        max-width: 100%;
+    }
+    /* Available Sectino End */
 }
