@@ -16,7 +16,9 @@ font-family: "EB Garamond", serif; */
     box-sizing: border-box;
     font-family: "EB Garamond", serif;
 }
-
+a {
+    text-decoration: none;
+}
 .text-center {
     text-align: center;
 }
@@ -82,16 +84,19 @@ ul , ol {
 
 /* Container */
 .container-w80 {
-    max-width: 80%;
+    /* max-width: 80%; */
+    max-width: min(80%, 1440px);
     margin: 0 auto;
 }
 .container-w90 {
-    max-width: 90%;
+    /* max-width: 90%; */
+    max-width: min(90%, 1600px);
     margin: 0 auto;
 }
 /* Container For Slider */
 .container-w95-overflow {
-    max-width: 95%;
+    /* max-width: 95%; */
+    max-width: min(95%, 1720px);
     margin: 0 auto;
 }
 
@@ -191,8 +196,9 @@ p {
 .Wrapper.perfectMatch .rightWrapper .cards .card .cardLayer {
     position: absolute;
     right: 0;
-    bottom: 0;
-    z-index: 1  ;
+    bottom: -1px;
+    border-bottom-right-radius: 16px;
+    z-index: 1;
 }
 /* Perfecth Match Container End */
 
@@ -235,7 +241,6 @@ p {
     padding-bottom: 5px;
 
 }
-
 /* Insta Section End */
 
 /* Available Section Start */
@@ -251,10 +256,11 @@ p {
 
 /* Blogs Section Start */
 .container-Blogs {
-    max-width: 70%;
-    margin: 0 auto;
+    /* max-width: 70%; */
+    max-width: min(70%, 1366px);
+    margin: 0 auto 40px;
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 50% 50%;
     gap: 50px;
 }
 
@@ -273,6 +279,7 @@ p {
 }
 .blogTextWrapper.blogTextFlex .blogText {
     width: 60%;
+    margin-bottom: 0;
 }
 .blogTextWrapper.blogTextFlex .blogLink {
     text-align: right;
@@ -282,14 +289,79 @@ p {
     font-size: 20px;
     margin-bottom: 8px;
 }
+.relatedBlogsWrap {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 60px;
+    height: 100%;
+}
+.relatedBlogsWrap .blogWrap{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 20px;
+    align-items: center;
+}
+.relatedBlogsWrap .blogWrap .imgWrapper > img {
+    height: 100%;
+}
+.blogTextWrapper .blogText {
+    margin-bottom: 22px;
+}
 /* Blogs Section End */
 /* Media Screens */
+@media screen and (max-width: 1366px) {
+    .container-Blogs {
+        max-width: 80%;
+    }
+    .Wrapper.perfectMatch .rightWrapper .cards .card .cardLayer {
+        width: 50%;
+    }
+}
+/* Tab Media Screen Start */
+@media screen and (min-width: 768px) and (max-width: 999px)   {
+    .section-padding {
+        padding: 70px 0;
+    }
+    .headingBlock {
+        margin-bottom: 60px;
+    }
+    .Wrapper.perfectMatch .leftWrapper .wrap {
+        width: 95%;
+    }
+    .Wrapper.perfectMatch .rightWrapper .cards .card .contentBlock {
+        width: 100%;
+    }
+    .Wrapper.perfectMatch .rightWrapper .cards .card .cardLayer {
+        width: 70%;
+    }
+    .Wrapper.DetailedAbout {
+        grid-template-columns: 1fr 1.25fr;
+    }
+    .Wrapper.DetailedAbout .leftWrapper .wrap {
+        width: 80%;
+    }
+    .Wrapper.DetailedAbout .rightWrapper .gridSix {
+        gap: 20px;
+    }
+    .Wrapper.DetailedAbout .rightWrapper .gridSix .rtbDescp {
+        text-align: center;
+    }
+    .container-Blogs {
+        max-width: 90%;
+    }
+}
+/* Tab Media Screen End */
 @media screen  and (max-width: 480px){
     /* Container */
     .container-w95-overflow {
         max-width: 95%;
         margin-right: 0;
     }
+    /* Section Padding */
+    .section-padding {
+        padding: 60px 0;
+    }
+    
     /* Heading Block */
     .headingBlock {
         margin-bottom: 45px;
@@ -298,6 +370,13 @@ p {
         font-size: 30px;
     }
      /* Perfect Match Container Start  */
+     .Wrapper.perfectMatch {
+        display: block;
+     }
+     .Wrapper.perfectMatch .leftWrapper {
+        max-width: 90%;
+        margin: 0 auto;
+     }
      .Wrapper.perfectMatch {
         grid-template-columns: 1fr;
      }
@@ -309,6 +388,19 @@ p {
      .Wrapper.perfectMatch .leftWrapper .wrap p{
         max-width: 300px;  
         margin: 0 auto;
+     }
+     .Wrapper.perfectMatch .rightWrapper .cards .card {
+        padding-top: 26px;
+        min-height: 420px;
+     }
+     .Wrapper.perfectMatch .rightWrapper .cards .card .cardHeading {
+        font-size: 24px;
+     }
+     .Wrapper.perfectMatch .rightWrapper .cards .card .contentBlock {
+        width: 70%;
+     }
+     .Wrapper.perfectMatch .rightWrapper .cards .card .cardLayer {
+        width: 75%;
      }
     /* Perfect Match Container End  */
     /* Who We Are Section Start */
@@ -337,4 +429,23 @@ p {
         max-width: 100%;
     }
     /* Available Sectino End */
+    /* Blogs Section Start */
+    .container-Blogs {
+        grid-template-columns: 100%;
+        max-width: 95%;
+        margin-right: 0;
+    }
+    .container-Blogs .leftWrapper {
+        display: none;
+    }
+    .relatedBlogsWrap .blogWrap {
+        grid-template-columns: 1fr;
+    }
+    .relatedBlogsWrap {
+        display: block;
+    }
+    .relatedBlogsWrap .blogWrap .imgWrapper > img {
+        width: 100%;
+    }
+    /* Blogs Section End */
 }
